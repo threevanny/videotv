@@ -9,7 +9,7 @@ import HLS from 'hls.js';
 })
 export class VideoplayerComponent implements OnInit {
   private hls = new HLS();
-  public user: string | null = 'HOME' //TODO: User que se pasa por la url como parametro !
+  public stream: string = 'live';
   private playing: boolean = false;
   @ViewChild('video', { static: true }) private readonly video: ElementRef<HTMLVideoElement> | any;
 
@@ -18,8 +18,7 @@ export class VideoplayerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user = this.route.snapshot.paramMap.get('user') || 'HOME';
-    this.load(`http://localhost:8000/live/${this.user}/index.m3u8`)
+    this.load(`http://localhost:8000/live/${this.stream}/index.m3u8`)
   }
 
   public loadInit(): void { }
