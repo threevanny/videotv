@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { LiveComponent } from './live/live.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     VideoplayerComponent,
-    LiveComponent
+    LiveComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
